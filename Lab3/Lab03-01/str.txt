@@ -1,0 +1,63 @@
+
+Strings v2.51
+Copyright (C) 1999-2013 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+!This program cannot be run in DOS mode.
+nnn
+Rich
+.text
+`.data
+ExitProcess
+kernel32.dll
+ws2_32
+cks=u
+ttp=
+cks=
+CONNECT %s:%i HTTP/1.0
+QSRW
+?503 
+200 
+thj@h
+jj
+uaE
+VSWRQ
+YZ_[^
+
+u
+^E
+YZ_[^
+D$0‹
+|$,‹
+D$0‹
+D$0‹
+D$4‹
+D$4‹
+I
+QVlM
+6I*h<8
+^-m-m<|<|<|M
+o/o/
+advapi32
+ntdll
+user32
+1+KY
+#%li
+}>*K
+QQVP
+f>u
+jjjjjj
+advpack
+StubPath
+SOFTWARE\Classes\http\shell\open\commandV
+Software\Microsoft\Active Setup\Installed Components\
+test
+ www.practicalmalwareanalysis.com
+admin
+VideoDriver
+WinVMX32-
+vmx32to64.exe
+SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+AppData
+V%X_

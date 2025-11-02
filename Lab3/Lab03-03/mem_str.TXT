@@ -1,0 +1,181 @@
+﻿SﾥSﾥSﾥﾻﾮRﾥﾻﾯ@ﾥ￐ﾫYﾥ
+VﾥSﾤbﾥﾻﾰRﾥ
+Ejjjj
+ￃￌￌￌￌ
+￁ￌￌￌ
+EPE
+YEPEPE
+ￃￌￌￌￌￌ
+D￤D￤D￨D￨D￬D￬D￰D￰D￴D￴D￸D￸D￼D￼
+ﾀￏ￫D
+ﾀￏ￫M
+ﾀￎ￯M
+Mﾍﾈ
+dDﾉﾞ
+ￃￂU
+Weﾡ
+[ￃￌￌ
+D￤D￤D￨D￨D￬D￬D￰D￰D￴D￴D￸D￸D￼D￼
+_ￃￌￌￌￌￌ
+wﾳwﾂ
+wwￕw
+!This program cannot be run in DOS mode.
+RichS
+.text
+`.rdata
+@.data
+hPS@
+@hTP@
+hPW@
+hPW@
+hPS@
+toj
+PhPW@
+PhPW@
+hPW@
+hPS@
+htP@
+hxP@
+GIu
+GJu
+tzVS
+GIt%
+t/Ku
+GKu
+SVW
+YYh P@
+VWu
+t9UW
+QQS3
+VWu
+PSSW
+PVW
+SS@SSPVSS
+t#SSUP
+t$$VSS
+UWV
+DSUVWh
+SVWUj
+SVW
+t.;t$$t(
+VC20XC00U
+SVWU
+tEVU
+SVW
+UAA
+Wj@Y3
+t7SW
+VPj
+VPV
+VPh
+ulSj
+pD#U
+SVW
+NCu
+VWuBh
+tPh
+SVW
+uFWWj
+"WWSh
+E WW
+tfS
+tMWWS
+WWu
+VSh 
+SVW
+PVh
+WSV
+runtime error 
+TLOSS error
+SING error
+DOMAIN error
+- unable to initialize heap
+- not enough space for lowio initialization
+- not enough space for stdio initialization
+- pure virtual function call
+- not enough space for _onexit/atexit table
+- unable to open console device
+- unexpected heap error
+- unexpected multithread lock error
+- not enough space for thread data
+abnormal program termination
+- not enough space for environment
+- not enough space for arguments
+- floating point not loaded
+Microsoft Visual C++ Runtime Library
+Runtime Error!
+Program: 
+<program name unknown>
+GetLastActivePopup
+GetActiveWindow
+MessageBoxA
+user32.dll
+GetModuleHandleA
+AllocConsole
+CloseHandle
+WriteFile
+SetFilePointer
+CreateFileA
+KERNEL32.dll
+UnhookWindowsHookEx
+GetMessageA
+SetWindowsHookExA
+ShowWindow
+FindWindowA
+CallNextHookEx
+GetWindowTextA
+GetForegroundWindow
+USER32.dll
+GetCommandLineA
+GetVersion
+ExitProcess
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+GetModuleFileNameA
+FreeEnvironmentStringsA
+FreeEnvironmentStringsW
+WideCharToMultiByte
+GetEnvironmentStrings
+GetEnvironmentStringsW
+SetHandleCount
+GetStdHandle
+GetFileType
+GetStartupInfoA
+HeapDestroy
+HeapCreate
+VirtualFree
+HeapFree
+RtlUnwind
+HeapAlloc
+GetCPInfo
+GetACP
+GetOEMCP
+VirtualAlloc
+HeapReAlloc
+GetProcAddress
+LoadLibraryA
+MultiByteToWideChar
+LCMapStringA
+LCMapStringW
+GetStringTypeA
+GetStringTypeW
+[Window: 
+ConsoleWindowClass
+practicalmalwareanalysis.log
+[SHIFT]
+[ENTER]
+[BACKSPACE]
+BACKSPACE
+[TAB]
+[CTRL]
+[DEL]
+[CAPS LOCK]
+[CAPS LOCK]
+C:\Documents and Settings\FanDH\
+\Lab03-03\~res-x86.htm - Microsoft Internet Explorer
+C:\Documents and Settings\FanDH\
+\Lab03-03\~res-x86.htm - Microsoft Internet Explorer
+C:\WINDOWS\system32\svchost.exe
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
