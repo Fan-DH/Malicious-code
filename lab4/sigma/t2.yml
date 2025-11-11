@@ -1,0 +1,44 @@
+title: "Hrtg Malware"
+id: 12345678-1234-1234-1234-000000000002
+status: experimental
+description: "2-hrtg"
+author: "Fan DH"
+date: 2025-11-09
+
+logsource:
+  product: windows
+  service: sysmon
+
+tags:
+  - attack.persistence
+  - attack.defense_evasion
+  - attack.privilege_escalation
+
+level: critical
+
+detection:
+  selection_file_drops:
+    TargetFilename|contains:
+      - '\\Winlo32.sys'
+      - '\\Winlo32.dll'
+      - '\Windows\SysWOW64\dead.bat'
+
+  selection_service_imagepath:
+    TargetObject|contains:
+      - 'HKLM\\System\\CurrentControlSet\\Services\\WINIO\\ImagePath'
+    Details|contains:
+      - 'winio64.sys'
+
+  selection_net_admin_lock:
+    Image|endswith:
+      - '\\net.exe'
+    CommandLine|contains:
+      - 'net user Administrator locked'
+
+  selection_cmd_deadbat:
+    Image|endswith:
+      - '\\cmd.exe'
+    ParentImage|contains:
+      - '\\dead.bat'
+      
+  condition: selection_file_drops or selection_service_imagepath or selection_net_admin_lock or selection_cmd_deadbat

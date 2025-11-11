@@ -1,0 +1,54 @@
+title: Yhzll Malware
+id: 12345678-1234-1234-1234-000000000004
+status: experimental
+description: "4-yhzll"
+author: Fan DH
+date: 2025-11-09
+
+logsource:
+  product: windows
+  service: sysmon
+
+tags:
+  - attack.execution
+  - attack.persistence
+  - attack.defacement
+
+level: critical
+  
+detection:
+  selection_sample_exec:
+    Image|endswith:
+      - '\\4-yhzll.exe'                     
+    Hashes|contains:
+      - 'MD5=5F60E639155A61593448B7B9775E27EF'
+      - 'SHA256=131B141ACB1C4B1EB1B1654D7166FEEEF9DBA521CEE4216ABD2D9AD48370797B'
+
+  selection_cmd:
+    CommandLine|contains:
+      - '\\4-yhzll.exe'
+
+  selection_kill_explorer:
+    ParentImage|endswith:
+      - '\\4-yhzll.exe'
+    Image|endswith:
+      - '\\taskkill.exe'
+    CommandLine|contains:
+      - 'taskkill /f /im explorer.exe'
+
+  selection_notepad_open:
+    ParentImage|endswith:
+      - '\\4-yhzll.exe'
+    Image|endswith:
+      - '\\notepad.exe'
+    CommandLine|contains:
+      - 'NOTEPAD.EXE'
+      - 'Girlfriend.txt'
+
+  selection_registry_store:
+    Image|endswith:
+      - '\\svchost.exe'
+    TargetObject|contains:
+      - '\\4-yhzll.exe'
+
+  condition: selection_sample_exec or selection_cmd or selection_kill_explorer or selection_notepad_open or selection_registry_store

@@ -1,0 +1,47 @@
+title: BossDaMajor Malware
+id: 12345678-1234-1234-1234-000000000005
+status: experimental
+description: "5-BossDaMajor"
+author: Fan DH
+date: 2025-11-09
+
+logsource:
+  product: windows
+  service: sysmon
+
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1060
+
+level: critical
+
+detection:
+  selection_malicious_exec1:
+    Image|endswith:
+      - '\\5-BossDaMajor.exe'
+      - '\\5-bossdamajor.exe'
+  
+  selection_malicious_exec2:
+    TargetFilename|contains: '\\mrsmajor\\'
+
+  selection_hashes:
+    Hashes|contains:
+      - 'MD5=38FF71C1DEE2A9ADD67F1EDB1A30FF8C'
+
+  selection_vbs_drop:
+    Image|endswith: '\\5-BossDaMajor.exe'
+    TargetFilename|contains: '\\Temp\\'
+    TargetFilename|endswith: 'CPUUsage.vbs'
+
+  selection_inventory_reg:
+    Image|endswith: '\\svchost.exe'
+    TargetObject|contains: 'InventoryApplicationFile'
+    Details|contains: '\\5-bossdamajor.exe'
+
+  selection_wmplayer_play:
+    Image|endswith: '\\wmplayer.exe'
+    CommandLine|contains: '\\Program Files\\mrsmajor\\def_resource\\f11.mp4'
+    ParentImage|endswith: '\\wscript.exe'
+
+  condition: selection_malicious_exec1 or selection_malicious_exec2 or selection_hashes or selection_vbs_drop or selection_inventory_reg or selection_wmplayer_play

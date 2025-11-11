@@ -1,0 +1,53 @@
+title: "WananCrypot0r Ransomware"
+id: 12345678-1234-1234-1234-000000000001
+status: experimental
+description: "1-WannaCrypt0r"
+author: "Fan DH"
+date: 2025-11-09
+
+logsource:
+  product: windows
+  service: sysmon
+  category: process_creation
+
+tags:
+  - attack.ransomware
+  - attack.impact
+  - attack.persistence
+  - attack.execution
+
+level: critical
+
+detection:
+  selection_suspicious_names:
+    Image|re:
+      - "1-?WannaCrypt"
+      - "@WanaDecryptor@"
+      - "tasksche"
+      - "taskse"
+      - "taskdl"
+
+  selection_wnry:
+    TargetFilename|endswith: ".wnry"
+
+  selection_cmd_start:
+    ParentImage|endswith:
+      - "\\cmd.exe"
+      - "\\SysWOW64\\cmd.exe"
+    CommandLine|contains:
+      - "start /b"
+      - "cmd.exe /c start /b"
+
+  selection_registry_run:
+    EventID: 13
+    TargetObject|contains:
+      - "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
+    Details|contains:
+      - "tasksche.exe"
+
+  selection_hashes:
+    Hashes|contains:
+      - "B9C5D4339809E0AD9A00D4D3DD26FDF44A32819A54ABF846BB9B560D81391C25"
+      - "E9EF013238495BFFCE7459E059BFFE340A0F08B439EC94E7D4436F4E13714ECD"
+
+  condition: selection_wnry or selection_suspicious_names or selection_cmd_start or selection_registry_run or selection_hashes

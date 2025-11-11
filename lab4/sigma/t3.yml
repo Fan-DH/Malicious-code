@@ -1,0 +1,54 @@
+title: "BUG32 Malware"
+id: 12345678-1234-1234-1234-000000000003
+status: experimental
+description: "3-BUG32"
+author: "Fan DH"
+date: 2025-11-09
+
+logsource:
+  product: windows
+  service: sysmon
+
+tags:
+  - attack.execution
+  - attack.persistence
+  - attack.defense_evasion
+
+level: critical
+
+detection:
+  selection_process_by_hash:
+    Hashes|contains:
+      - 'MD5=149CC2EC1900CB778AFB50D8026EADF5'
+
+  selection_temp_files:
+    TargetFilename|re:
+      - '(?i)\\temp\\.*(runner\.vbs|jsc\.exe|\\bBUG32\\b)'
+
+  selection_wscript_exec:
+    Image|endswith:
+      - '\\wscript.exe'
+    CommandLine|contains:
+      - 'runner.vbs'
+
+  selection_registry_inventory:
+    Image|endswith:
+      - '\\svchost.exe'
+    TargetObject|contains:
+      - '3-bug32.exe'
+    Details|contains:
+      - 'BUG32.exe'
+
+  selection_registry_run:
+    TargetObject|contains:
+      - 'Software\\Microsoft\\Windows\\CurrentVersion\\Run'
+    Details|contains:
+      - 'BUG32.exe'
+
+  selection_taskkill_kill:
+    Image|endswith:
+      - '\\taskkill.exe'
+    ParentCommandLine|contains:
+      - 'C:\\BUG32\\Kill.bat'
+
+  condition: selection_process_by_hash or selection_temp_files or selection_wscript_exec or selection_registry_inventory or selection_registry_run or selection_taskkill_kill
